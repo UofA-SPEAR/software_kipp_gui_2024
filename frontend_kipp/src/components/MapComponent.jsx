@@ -106,7 +106,7 @@ const MapComponent = () => {
     };
   }, []);
 
-  return <div id="map" style={{ width: "100%", height: "100vh" }}></div>;
+  return <div id="map" style={{ width: "70%", height: "100vh" }}></div>;
 };
 
 export default MapComponent;
