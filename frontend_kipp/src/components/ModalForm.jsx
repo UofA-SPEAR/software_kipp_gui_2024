@@ -15,7 +15,7 @@ import {
 } from "@chakra-ui/react";
 import CustomButton from "./Button";
 
-const ModalForm = ({ isOpen, onClose }) => {
+const ModalForm = ({ isOpen, onClose, handleCoordinates }) => {
   const [x1, setx1] = useState("");
   const [y1, sety1] = useState("");
   const [x2, setx2] = useState("");
@@ -30,7 +30,16 @@ const ModalForm = ({ isOpen, onClose }) => {
       return;
     }
     console.log(x1, x2, x3, y1, y2, y3);
-    //send to backend
+
+    //send to map component and backend
+    let coordinates = [
+      { x: x1, y: y1 },
+      { x: x2, y: y2 },
+      { x: x3, y: y3 },
+    ];
+
+    handleCoordinates(coordinates);
+
     onClose();
   };
 
